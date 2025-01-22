@@ -1,6 +1,6 @@
 package aluracursos.foro_hub.infra.security;
 
-import med.voll.api.domain.usuarios.UsuarioRepository;
+import aluracursos.foro_hub.domain.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +15,6 @@ public class AutenticacionService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return usuarioRepository.findByLogin(username);
+        return usuarioRepository.findByNombre(username);
     }
 }
